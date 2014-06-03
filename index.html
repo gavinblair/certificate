@@ -148,13 +148,19 @@ window.location = "http://www.google.com/";
   <script>
     $(document).ready(function(){
   $('span').keydown(function(){
-      var data = '{"firstName":"'+$('#firstName').text()+'","lastName":"'+$('#lastName').text()+'","course":"'+$('#course').text()+'","forcedownload":0,"language":"en"}';
+      handlekey();
+  });
+  $('span').keyup(function(){
+      handlekey();
+  });
+  
+});
+function handlekey(){
+  var data = '{"firstName":"'+$('#firstName').text()+'","lastName":"'+$('#lastName').text()+'","course":"'+$('#course').text()+'","forcedownload":0,"language":"en"}';
       data = window.btoa(data);
       console.log(data);
       $('#submit').attr('href', "http://www.labour.gov.on.ca/scripts/mpdf/certificate.php?id="+data);
-
-  });
-});
+}
     //@ sourceURL=pen.js
   </script>
   <script type="text/javascript">
