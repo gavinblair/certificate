@@ -147,10 +147,7 @@ window.location = "http://www.google.com/";
 
   <script>
     $(document).ready(function(){
-  $('span').keydown(function(){
-      handlekey();
-  });
-  $('span').keyup(function(){
+  $('span').on('keydown keyup click focus blur', function(){
       handlekey();
   });
   
